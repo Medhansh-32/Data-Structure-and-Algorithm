@@ -15,7 +15,10 @@ public class Subarry_Sum_K {
 
             preSum += arr[i];
             int remove = preSum - k;
-            cnt += mpp.getOrDefault(remove, 0);
+            if(mpp.containsKey(preSum-k)){
+                cnt+=mpp.get(preSum-k);
+            }
+
             mpp.put(preSum, mpp.getOrDefault(preSum, 0) + 1);
         }
         return cnt;
@@ -25,7 +28,7 @@ public class Subarry_Sum_K {
 
         System.out.println(findAllSubarraysWithGivenSum(new int[]{10,5,2,7,1,5},15));
         System.out.println(findAllSubarraysWithGivenSum(new int[]{3, 4, -7, 1, 3, 3, 1, -4}, 7));
-
+        System.out.println(findAllSubarraysWithGivenSum(new int[]{1,2,3,-3,1,1,1,4,2,-3}, 3));
 
     }
 }
