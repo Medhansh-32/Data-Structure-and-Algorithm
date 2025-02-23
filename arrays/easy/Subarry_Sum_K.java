@@ -14,7 +14,6 @@ public class Subarry_Sum_K {
         for (int i = 0; i < n; i++) {
 
             preSum += arr[i];
-            int remove = preSum - k;
             if(mpp.containsKey(preSum-k)){
                 cnt+=mpp.get(preSum-k);
             }
