@@ -49,7 +49,7 @@ public class Set_Zeroes
     }
 
     public static void main(String[] args) {
-        // Initialize matrix
+
         int[][] matrix = {
                 {1, 1, 1},
                 {1, 0, 1},
