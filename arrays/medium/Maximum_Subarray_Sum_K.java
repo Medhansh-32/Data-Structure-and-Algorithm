@@ -22,6 +22,6 @@ public class Maximum_Subarray_Sum_K {
     }
 
     public static void main(String[] args) {
-        System.out.println();
+        System.out.println(subarraySum(new int[]{1,1,1},2));
     }
 }
