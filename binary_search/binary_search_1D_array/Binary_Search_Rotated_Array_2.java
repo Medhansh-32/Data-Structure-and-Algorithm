@@ -45,5 +45,6 @@ public class Binary_Search_Rotated_Array_2 {
             System.out.println("Target is not present.");
         else
             System.out.println("Target is present in the array.");
+
     }
 }
