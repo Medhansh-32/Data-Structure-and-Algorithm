@@ -2,19 +2,22 @@ package binary_search.binary_search_1D_array;
 
 public class Min_Rotated_Sorted_Array {
     static   public int findMin(int[] nums) {
+        int i=0,j=nums.length-1;
+        int min=Integer.MAX_VALUE;
+        int temp=Integer.MIN_VALUE;
+        while(i<=j){
 
-        int start=0,end=nums.length-1;
-        while(start<end){
-            int mid=(start+end)/2;
-
-
-            if(nums[mid]<=nums[end]){
-                end=mid;
+            int mid=(i+j)/2;
+            if(nums[mid]>=nums[i]){
+                temp=nums[i];
+                i=mid+1;
             }else{
-                start=mid+1;
+                temp=nums[mid];
+                j=mid-1;
             }
+            min=Math.min(min,temp);
         }
-        return nums[start];
+        return min;
     }
 
     public static void main(String[] args) {
