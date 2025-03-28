@@ -3,6 +3,7 @@ package arrays.hard;
 public class Max_Product {
 
     static  public int maxProduct(int[] nums) {
+
         int pre=1,suf=1;
         int max=Integer.MIN_VALUE;
         for(int i=0;i<nums.length;i++){
