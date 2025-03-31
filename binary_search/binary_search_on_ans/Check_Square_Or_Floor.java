@@ -1,4 +1,4 @@
-package binary_search.binary_search_1D_array;
+package binary_search.binary_search_on_ans;
 
 public class Check_Square_Or_Floor {
 
