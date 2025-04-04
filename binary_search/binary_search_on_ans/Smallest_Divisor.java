@@ -1,36 +1,44 @@
 package binary_search.binary_search_on_ans;
 
 public class Smallest_Divisor {
-    public static int sumByD(int[] arr, int div) {
-        int n = arr.length;
 
-        int sum = 0;
-        for (int i = 0; i < n; i++) {
-            sum += Math.ceil((double)(arr[i]) / (double)(div));
+    public static int getSum(int nums[],double divisor){
+        double sum=0;
+        for(int i=0;i<nums.length;i++){
+            double div=Math.ceil(nums[i]/divisor);
+            sum+=div;
         }
-        return sum;
+
+        return (int)sum;
     }
-    public static int smallestDivisor(int[] arr, int limit) {
-        int n = arr.length;
-        if(n > limit) return -1;
 
-        int maxi = Integer.MIN_VALUE;
-        for (int i = 0; i < n; i++) {
-            maxi = Math.max(maxi, arr[i]);
+    public static int max(int nums[]){
+        int max=nums[0];
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>max) max=nums[i];
         }
+        return max;
+    }
 
-        int low = 1, high = maxi;
+    public static int smallestDivisor(int[] nums, int threshold) {
 
+        int start=1;
+        int end=max(nums);
+        int ans=Integer.MAX_VALUE;
+        while(start<=end){
+            int mid=(start+end)/2;
+            int div=getSum(nums,mid);
 
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (sumByD(arr, mid) <= limit) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
+            if(div>threshold){
+                start=mid+1;
+            }else{
+                ans=Math.min(mid,ans);
+                end=mid-1;
             }
+
         }
-        return low;
+
+        return ans;
     }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5};
