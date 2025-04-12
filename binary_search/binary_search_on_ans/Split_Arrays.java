@@ -47,6 +47,7 @@ public class Split_Arrays {
 
     public static void main(String[] args) {
         System.out.println("Largest sum is : "+splitArray(new int[]{7,2,5,10,8},2));
+
     }
 
 }
