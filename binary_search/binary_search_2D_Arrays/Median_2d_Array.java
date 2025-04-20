@@ -3,49 +3,60 @@ package binary_search.binary_search_2D_Arrays;
 public class Median_2d_Array {
 
 
-        static int upperBound(int[] arr, int x, int n) {
-            int low = 0, high = n - 1;
-            int ans = n;
+        public static int getCount(int matrix[][],int row,int n){
+            int start=0,end=matrix[0].length-1;
 
-            while (low <= high) {
-                int mid = (low + high) / 2;
-                // maybe an answer
-                if (arr[mid] > x) {
-                    ans = mid;
-                    // look for a smaller index on the left
-                    high = mid - 1;
-                } else {
-                    low = mid + 1; // look on the right
+            while(start<=end){
+                int mid=(start+end)/2;
+
+                if(matrix[row][mid]<=n){
+                    start=mid+1;
+                }else{
+                    end=mid-1;
                 }
             }
-            return ans;
+
+            return end+1;
+        }
+        public static int totalMax(int matrix[][],int n){
+
+            int row=0;
+
+            int count=0;
+            for(int i=0;i<matrix.length;i++){
+                if(matrix[i][0]<=n){
+                    count+=getCount(matrix,i, n);
+                }
+            }
+            return count;
         }
 
-        static int countSmallEqual(int[][] matrix, int m, int n, int x) {
-            int cnt = 0;
-            for (int i = 0; i < m; i++) {
-                cnt += upperBound(matrix[i], x, n);
-            }
-            return cnt;
-        }
 
-        static int median(int[][] matrix, int m, int n) {
-            int low = Integer.MAX_VALUE, high = Integer.MIN_VALUE;
+        public static int findMedian(int matrix[][], int m, int n) {
 
-            // point low and high to right elements
-            for (int i = 0; i < m; i++) {
-                low = Math.min(low, matrix[i][0]);
-                high = Math.max(high, matrix[i][n - 1]);
+            int start=Integer.MAX_VALUE;
+            int end=Integer.MIN_VALUE;
+            for(int i=0;i<matrix.length;i++){
+                start=Math.min(start,matrix[i][0]);
+                end=Math.max(end,matrix[i][matrix[0].length-1]);
             }
 
-            int req = (n * m) / 2;
-            while (low <= high) {
-                int mid = (low + high) / 2;
-                int smallEqual = countSmallEqual(matrix, m, n, mid);
-                if (smallEqual <= req) low = mid + 1;
-                else high = mid - 1;
+            int pivot=(m*n)/2;
+            while(start<=end){
+                int mid=(start+end)/2;
+
+                int val=totalMax(matrix,mid);
+
+
+                if(val>pivot){
+                    end=mid-1;
+                }else{
+                    start=mid+1;
+                }
             }
-            return low;
+
+            return start;
+
         }
 
         public static void main(String[] args) {
@@ -56,7 +67,7 @@ public class Median_2d_Array {
             };
             int m = matrix.length;
             int n = matrix[0].length;
-            int ans = median(matrix, m, n);
+            int ans = findMedian(matrix, m, n);
             System.out.println("The median element is: " + ans);
         }
     }

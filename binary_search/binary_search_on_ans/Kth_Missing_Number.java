@@ -2,23 +2,31 @@ package binary_search.binary_search_on_ans;
 
 public class Kth_Missing_Number {
 
-    public static int missingK(int[] vec, int n, int k) {
-        int low = 0, high = n - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            int missing = vec[mid] - (mid + 1);
-            if (missing < k) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
+    public static int missingK(int[] arr ,int k) {
+        int start=0,end=arr.length-1;
+
+        while(start<=end){
+
+            int mid=(start+end)/2;
+
+            if(arr[mid]-(mid+1)<k){
+                start=mid+1;
+            }else{
+                end=mid-1;
             }
         }
-        return k + high + 1;
+        int temp=start;
+        start=end;
+        end=temp;
+
+        int index=start==-1?1:arr[start];
+        return index+(k-(index-(start+1)));
+
     }
     public static void main(String[] args) {
-        int[] vec = {4, 7, 9, 10};
-        int n = 4, k = 4;
-        int ans = missingK(vec, n, k);
+        int[] arr = {4, 7, 9, 10};
+        int  k = 4;
+        int ans = missingK(arr, k);
         System.out.println("The missing number is: " + ans);
     }
 }
