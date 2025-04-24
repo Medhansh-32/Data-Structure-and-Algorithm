@@ -39,7 +39,7 @@ public class Reverse_Words {
     }
 
     public static void main(String[] args) {
-        String st = "TUF is great for interview preparation";
+        String st = "I am Medhansh Sharma";
         System.out.println("Before reversing words: ");
         System.out.println(st);
         System.out.println("After reversing words: ");
