@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class LCS {
 
-        public String longestCommonPrefix(String[] strs) {
+        public static String longestCommonPrefix(String[] strs) {
             Arrays.sort(strs);
             String ans="";
             for(int i=0;i<strs[0].length();i++){
@@ -16,5 +16,9 @@ public class LCS {
 
             return ans;
         }
+
+    public static void main(String[] args) {
+        System.out.println(longestCommonPrefix(new String[]{"flower","flow","flight"}));
+    }
 
 }
