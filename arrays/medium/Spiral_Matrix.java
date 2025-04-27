@@ -39,13 +39,13 @@ public class Spiral_Matrix {
 
     public static void main(String[] args) {
         int[][] spiralMatrix = {
-                { 1,  2,  3,  4 },
-                { 7,  6,  5,  8 },
-                { 9, 10, 11, 12 }
+                {1, 2, 3, 4},
+                {7, 6, 5, 8},
+                {9, 10, 11, 12}
         };
         System.out.println("Before Rotation :");
-        Arrays.stream(spiralMatrix).forEach(x->{
-            Arrays.stream(x).forEach(y-> System.out.print(y+"  "));
+        Arrays.stream(spiralMatrix).forEach(x -> {
+            Arrays.stream(x).forEach(y -> System.out.print(y + "  "));
             System.out.println();
         });
         System.out.println();

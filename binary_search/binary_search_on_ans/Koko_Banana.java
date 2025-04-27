@@ -3,7 +3,8 @@ package binary_search.binary_search_on_ans;
 public class Koko_Banana {
 
     public static int findMax(int[] v) {
-        int maxi = Integer.MIN_VALUE;;
+        int maxi = Integer.MIN_VALUE;
+        ;
         int n = v.length;
 
         for (int i = 0; i < n; i++) {
@@ -12,12 +13,12 @@ public class Koko_Banana {
         return maxi;
     }
 
-    public  static int calculateTotalHours(int[] v, int hourly) {
+    public static int calculateTotalHours(int[] v, int hourly) {
         int totalH = 0;
         int n = v.length;
 
         for (int i = 0; i < n; i++) {
-            totalH += Math.ceil((double)(v[i]) / (double)(hourly));
+            totalH += Math.ceil((double) (v[i]) / (double) (hourly));
         }
         return totalH;
     }

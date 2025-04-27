@@ -30,7 +30,7 @@ public class Binary_Search_Rotated_Array {
     }
 
     public static void main(String[] args) {
-        System.out.println("Target is at : "+search(new int[]{4,5,6,7,0,1,2},0));
+        System.out.println("Target is at : " + search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0));
     }
 
 }

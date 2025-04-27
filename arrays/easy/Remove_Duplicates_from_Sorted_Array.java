@@ -2,6 +2,10 @@ package arrays.easy;
 
 public class Remove_Duplicates_from_Sorted_Array {
 
+    public static void main(String[] args) {
+
+    }
+
     public int removeDuplicates(int[] nums) {
         int j = 1;
         for (int i = 0; i < nums.length - 1; i++) {
@@ -13,9 +17,5 @@ public class Remove_Duplicates_from_Sorted_Array {
             }
         }
         return j;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

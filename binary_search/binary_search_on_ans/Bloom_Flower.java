@@ -16,7 +16,7 @@ public class Bloom_Flower {
                 .orElseThrow();
     }
 
-    public  static int check(int[] bloomday, int day, int k, int m) {
+    public static int check(int[] bloomday, int day, int k, int m) {
         int total = k * m;
         int flower = 0;
         int counter = 0;
@@ -24,14 +24,14 @@ public class Bloom_Flower {
         for (int i = 0; i < bloomday.length; i++) {
             if (bloomday[i] <= day) {
                 counter++;
-            }else{
-                counter=counter/k;
+            } else {
+                counter = counter / k;
             }
-            if(counter==k) {flower++;
-                counter=0;
+            if (counter == k) {
+                flower++;
+                counter = 0;
             }
         }
-
 
 
         if (flower > m) {
@@ -51,7 +51,7 @@ public class Bloom_Flower {
         int start = min(bloomDay), end = max(bloomDay);
 
         int ans = Integer.MAX_VALUE;
-        if(start==end) return start;
+        if (start == end) return start;
         while (start <= end) {
             int mid = (start + end) / 2;
             int day = check(bloomDay, mid, k, m);
@@ -68,10 +68,10 @@ public class Bloom_Flower {
             }
 
         }
-        return ans==Integer.MAX_VALUE?-1:ans;
+        return ans == Integer.MAX_VALUE ? -1 : ans;
     }
 
     public static void main(String[] args) {
-        System.out.println("Minimum days to wait for bouquets : "+minDays(new int[]{1,10,3,10,2},3,1));
+        System.out.println("Minimum days to wait for bouquets : " + minDays(new int[]{1, 10, 3, 10, 2}, 3, 1));
     }
 }

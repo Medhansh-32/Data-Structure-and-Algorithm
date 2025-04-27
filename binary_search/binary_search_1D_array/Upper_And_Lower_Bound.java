@@ -1,7 +1,6 @@
 package binary_search.binary_search_1D_array;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Upper_And_Lower_Bound {
     public static int[] getFloorAndCeil(int x, int[] arr) {

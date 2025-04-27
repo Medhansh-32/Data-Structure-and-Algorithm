@@ -20,20 +20,20 @@ public class Row_With_Max_1 {
 
 
     public static int getMaxRow(int arr[][]) {
-        int max=Integer.MIN_VALUE;
-        int index=-1;
-        for(int i=0;i<arr.length;i++){
-                int count=getRowCount(arr,i);
-                if(count>max){
-                    max=count;
-                    index=i;
-                }
+        int max = Integer.MIN_VALUE;
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            int count = getRowCount(arr, i);
+            if (count > max) {
+                max = count;
+                index = i;
+            }
         }
-      return index;
+        return index;
     }
 
 
     public static void main(String[] args) {
-        System.out.println(getMaxRow(new int[][]{{ 0, 1}, { 0, 1}, { 0, 0}}));
+        System.out.println(getMaxRow(new int[][]{{0, 1}, {0, 1}, {0, 0}}));
     }
 }

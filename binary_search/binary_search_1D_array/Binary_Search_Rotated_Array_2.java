@@ -1,7 +1,7 @@
 package binary_search.binary_search_1D_array;
 
 public class Binary_Search_Rotated_Array_2 {
-    public static boolean searchInARotatedSortedArrayII(int []arr, int k) {
+    public static boolean searchInARotatedSortedArrayII(int[] arr, int k) {
         int n = arr.length; // size of the array.
         int low = 0, high = n - 1;
         while (low <= high) {

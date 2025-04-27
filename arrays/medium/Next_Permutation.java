@@ -4,21 +4,23 @@ import java.util.Arrays;
 
 public class Next_Permutation {
 
-    public static void rev(int nums[],int i,int j){
-        while(i<j){
-            int temp=nums[i];
-            nums[i]=nums[j];
-            nums[j]=temp;
+    public static void rev(int nums[], int i, int j) {
+        while (i < j) {
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
             i++;
             j--;
         }
     }
-    public static void swap(int nums[],int i,int j){
-        int temp=nums[i];
-        nums[i]=nums[j];
-        nums[j]=temp;
+
+    public static void swap(int nums[], int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
-    public static void  nextPermutation(int[] nums) {
+
+    public static void nextPermutation(int[] nums) {
         int i = -1;
         for (i = nums.length - 2; i >= 0; i--) {
             if (nums[i] < nums[i + 1]) {
@@ -38,9 +40,10 @@ public class Next_Permutation {
         }
 
     }
-        public static void main(String[] args) {
-        int arr[]={2,1,5,4,3,0,0};
+
+    public static void main(String[] args) {
+        int arr[] = {2, 1, 5, 4, 3, 0, 0};
         nextPermutation(arr);
-        Arrays.stream(arr).forEach(x-> System.out.print(x+" "));
+        Arrays.stream(arr).forEach(x -> System.out.print(x + " "));
     }
 }

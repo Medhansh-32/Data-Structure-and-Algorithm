@@ -1,6 +1,6 @@
 package binary_search.binary_search_on_ans;
 
-import java.util.*;
+import java.util.Arrays;
 
 class Allocate_Books {
 
@@ -30,16 +30,16 @@ class Allocate_Books {
         int end = Arrays.stream(nums).sum();
 
 
-        int ans=Integer.MAX_VALUE;
+        int ans = Integer.MAX_VALUE;
         while (start <= end) {
 
             int mid = (start + end) / 2;
 
             int temp = check(nums, m, mid);
-            if (temp == m){
-                ans=Math.min(ans,mid);
-                end=mid-1;
-            }else if (temp < m) {
+            if (temp == m) {
+                ans = Math.min(ans, mid);
+                end = mid - 1;
+            } else if (temp < m) {
                 end = mid - 1;
             } else {
                 start = mid + 1;
@@ -49,6 +49,6 @@ class Allocate_Books {
     }
 
     public static void main(String[] args) {
-        System.out.println("Answer is : "+findPages(new int[]{25, 46, 28, 49, 24},4));
+        System.out.println("Answer is : " + findPages(new int[]{25, 46, 28, 49, 24}, 4));
     }
 }

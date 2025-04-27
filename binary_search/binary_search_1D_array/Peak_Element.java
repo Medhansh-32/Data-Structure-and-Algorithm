@@ -1,8 +1,8 @@
 package binary_search.binary_search_1D_array;
 
 
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Peak_Element {
     public static int findPeakElement(ArrayList<Integer> arr) {

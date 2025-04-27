@@ -23,9 +23,10 @@ public class Merge_Intervals {
     }
 
     public static void main(String[] args) {
-        Arrays.stream(merge(new int[][]{ {1, 3}, {2, 6}, {8, 10}, {15, 18} }
-        )).forEach(x->{
-            Arrays.stream(x).forEach(y-> {System.out.print(y+" ");
+        Arrays.stream(merge(new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}}
+        )).forEach(x -> {
+            Arrays.stream(x).forEach(y -> {
+                System.out.print(y + " ");
             });
             System.out.println();
         });

@@ -3,7 +3,7 @@ package arrays.hard;
 import java.util.Arrays;
 
 public class Merge_Array {
-    static   public void merge(int[] nums1, int m, int[] nums2, int n) {
+    static public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i = m - 1;
         int j = n - 1;
         int k = m + n - 1;
@@ -22,8 +22,8 @@ public class Merge_Array {
     }
 
     public static void main(String[] args) {
-        int org[]=new int[]{1,2,3,0,0,0};
-        merge(org,3,new int[]{2,5,6},3);
-        Arrays.stream(org).forEach(x-> System.out.println(x+" "));
+        int org[] = new int[]{1, 2, 3, 0, 0, 0};
+        merge(org, 3, new int[]{2, 5, 6}, 3);
+        Arrays.stream(org).forEach(x -> System.out.println(x + " "));
     }
 }

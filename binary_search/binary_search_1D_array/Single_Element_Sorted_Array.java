@@ -2,12 +2,12 @@ package binary_search.binary_search_1D_array;
 
 public class Single_Element_Sorted_Array {
 
-    static  public int singleNonDuplicate(int[] nums) {
+    static public int singleNonDuplicate(int[] nums) {
 
-        if(nums.length==1) return nums[0];
+        if (nums.length == 1) return nums[0];
         if (nums[0] != nums[1])
             return nums[0];
-        if (nums[nums.length - 1] != nums[nums.length - 2]) return nums[nums.length-1];
+        if (nums[nums.length - 1] != nums[nums.length - 2]) return nums[nums.length - 1];
 
         int i = 1, j = nums.length - 2;
 
@@ -26,7 +26,8 @@ public class Single_Element_Sorted_Array {
         return -1;
 
     }
+
     public static void main(String[] args) {
-        System.out.println("Single element in given array is : "+singleNonDuplicate(new int[]{1,1,2,3,3,4,4,8,8}));
+        System.out.println("Single element in given array is : " + singleNonDuplicate(new int[]{1, 1, 2, 3, 3, 4, 4, 8, 8}));
     }
 }

@@ -2,7 +2,7 @@ package strings.basic_and_easy;
 
 public class Anagram_Check {
 
-    static  public boolean isAnagram(String str1, String str2) {
+    static public boolean isAnagram(String str1, String str2) {
         if (str1.length() != str2.length())
             return false;
 
@@ -19,6 +19,7 @@ public class Anagram_Check {
         }
         return true;
     }
+
     public static void main(String args[]) {
         String Str1 = "INTEGER".toLowerCase();
         String Str2 = "TEGERNI".toLowerCase();

@@ -46,7 +46,7 @@ public class Aggressive_Cows {
 
     public static void main(String[] args) {
 
-        System.out.println("Minimum distance between cows can be : "+findMin(new int[]{0, 3, 4, 9, 7, 10}, 4));
+        System.out.println("Minimum distance between cows can be : " + findMin(new int[]{0, 3, 4, 9, 7, 10}, 4));
 
     }
 }

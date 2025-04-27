@@ -23,7 +23,6 @@ public class Search_In_2D_Array {
     }
 
 
-
     public static boolean searchMatrix(int[][] matrix, int target) {
 
         //             for(int i=0;i<matrix.length;i++){
@@ -41,11 +40,11 @@ public class Search_In_2D_Array {
 
 
         int start = 0, end = matrix[0].length * matrix.length - 1;
-        int rowSize=matrix[0].length;
+        int rowSize = matrix[0].length;
         while (start <= end) {
             int mid = (start + end) / 2;
 
-            int value = matrix[mid/rowSize][mid%rowSize];
+            int value = matrix[mid / rowSize][mid % rowSize];
             if (value == target) {
                 return true;
 
@@ -63,12 +62,12 @@ public class Search_In_2D_Array {
 
     public static void main(String[] args) {
 
-        int target=11;
+        int target = 11;
 
-        int matrix[][]=new int[][]{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
-        System.out.println("%d is Present : %b".formatted(target,searchMatrix(matrix,target)));
+        int matrix[][] = new int[][]{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
+        System.out.println("%d is Present : %b".formatted(target, searchMatrix(matrix, target)));
 
-        target=8;
-        System.out.println("%d is Present : %b".formatted(target,searchMatrix(matrix,target)));
+        target = 8;
+        System.out.println("%d is Present : %b".formatted(target, searchMatrix(matrix, target)));
     }
 }

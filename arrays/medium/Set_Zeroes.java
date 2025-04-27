@@ -1,7 +1,6 @@
 package arrays.medium;
 
-public class Set_Zeroes
-{
+public class Set_Zeroes {
     static int[][] zeroMatrix(int[][] matrix, int n, int m) {
 
         int col0 = 1;

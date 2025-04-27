@@ -31,11 +31,11 @@ public class First_Last_Occurrence {
             }
         }
 
-        return new int[] { first, second };
+        return new int[]{first, second};
     }
 
     public static void main(String[] args) {
-        var ans=searchRange(new int[]{1,1,1,1,1,1,2,3,4,4,5,5,5,6,7,8,8,8,8},8);
-        System.out.println("First Occurrence : "+ans[0]+" Last Occurrence : "+ans[1]);
+        var ans = searchRange(new int[]{1, 1, 1, 1, 1, 1, 2, 3, 4, 4, 5, 5, 5, 6, 7, 8, 8, 8, 8}, 8);
+        System.out.println("First Occurrence : " + ans[0] + " Last Occurrence : " + ans[1]);
     }
 }

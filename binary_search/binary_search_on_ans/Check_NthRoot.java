@@ -41,6 +41,7 @@ public class Check_NthRoot {
         return -1;
 
     }
+
     public static void main(String[] args) {
         int n = 3, m = 64;
         System.out.println("""
