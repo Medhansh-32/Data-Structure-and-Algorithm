@@ -48,8 +48,51 @@ public class Linked_List_Impl {
             }
             return size;
         }
+        public T delete(int pos){
+            int i=1;
+            Node temp=head;
+            while(i!=pos-1){
+                temp=temp.next;
+                i++;
+            }
+            T data = temp.next.data;
+            temp.next=temp.next!=null?temp.next.next:temp.next;
 
-    }
+            return data;
+        }
+
+        public int search(T data){
+            Node temp = head;
+            int i=0;
+            while(temp!=null){
+                if(temp.data==data) return i;
+                i++;
+                temp=temp.next;
+            }
+            return -1;
+        }
+
+
+       public Node ans = null;
+
+       public Node rev(Node head) {
+           if (head.next == null) {
+               ans = head;
+               return head;
+           }
+           rev(head.next).next = head;
+           return head;
+       }
+
+       public void reverseList() {
+           rev(head).next = null;
+           head=ans;
+
+       }
+
+        }
+
+
 
 
     public static   void main(String[] args) {
@@ -61,6 +104,15 @@ public class Linked_List_Impl {
         list.add(4);
         list.add(5);
         list.printList();
+        list.delete(3);
+        list.printList();
         System.out.println(list.size());
+
+        System.out.println(list.search(6));
+        System.out.println(list.search(2));
+        list.printList();
+        list.reverseList();
+        list.printList();
+
     }
 }
