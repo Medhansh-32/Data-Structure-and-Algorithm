@@ -95,15 +95,6 @@ public class Sort_List {
             head = sort(head);
         }
 
-        // Convenience method to create and return a sorted list
-        public static <E extends Comparable<E>> LinkedList<E> createSortedList(E[] values) {
-            LinkedList<E> list = new LinkedList<>();
-            for (E value : values) {
-                list.add(value);
-            }
-            list.sortList();
-            return list;
-        }
     }
 
     public static void main(String[] args) {
